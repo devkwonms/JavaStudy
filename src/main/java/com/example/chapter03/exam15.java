@@ -9,5 +9,19 @@ public class exam15 {
                 대대손손 훌륭한 인물도 많아.
                 """;
         System.out.println(str);
+
+        String human = """
+                이름 : 권민서
+                나이 : 29
+                직업 : 프로그래머
+                """;
+        System.out.println(human);
+
+        String human1 = """
+                이름 : 권민서    \s
+                나이 : 29       \s
+                직업 : 프로그래머 \s
+                """;
+        System.out.println(human1);
     }
 }
