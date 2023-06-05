@@ -8,6 +8,7 @@ public class exam2 {
             System.out.println("성인입니다!");
         }else if(age < 19){
             System.out.println("미성년자입니다!");
+            System.out.println("술집입장!");
         }
     }
 }
