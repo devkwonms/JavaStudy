@@ -8,6 +8,7 @@ public class exam3 {
             System.out.println("술집입장!");
         }else{
             System.out.println("미성년자입니다!");
+            System.out.println("애들은 가라!");
         }
     }
 }
