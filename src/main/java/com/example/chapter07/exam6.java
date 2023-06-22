@@ -16,6 +16,8 @@ public class exam6 {
             }
             System.out.println((student + 1) + "번 => 총점 : " +
                     sum + ", " + "평균 : " + (float) sum / score[0].length);
+                    classSum += sum;
         }
+        System.out.println("학급 전체 평균 : " + (float)classSum/(score.length * score[0].length));
     }
 }
