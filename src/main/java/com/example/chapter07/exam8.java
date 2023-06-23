@@ -7,8 +7,6 @@ public class exam8 {
         for (int s : score) {
             sum += s;
         }
-        System.out.println("총점 : = " + sum);
-        System.out.println("평균 : = " + (float) sum / score.length);
-
+        System.out.println("score[0] = " + score[0]);
     }
 }
