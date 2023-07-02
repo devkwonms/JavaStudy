@@ -7,6 +7,9 @@ public class exam13 {
         System.out.println(ar[0]);
 
         ar = null;
-        System.out.println(ar[0]);
+
+        if( ar != null) {
+            System.out.println(ar[0]);
+        }
     }
 }
