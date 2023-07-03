@@ -6,7 +6,7 @@ public class exam3 {
         int month = 2;
 
         int days = getMonthDays(year, month);
-        System.out.println(year + " 년 " + month + "월은" + days + "일 까지 있습니다");
+        System.out.println(year + " 년 " + month + "월은 " + days + "일 까지 있습니다");
     }
 
     static int getMonthDays(int year, int month) {
