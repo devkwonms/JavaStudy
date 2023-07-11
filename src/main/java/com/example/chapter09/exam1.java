@@ -24,7 +24,14 @@ public class exam1 {
         korando.name = "코란도C";
         korando.gasoline = false;
 
+        System.out.print(korando.name + " : ");
         korando.run();
-        korando.stop();
+
+        Car equus = new Car();
+        equus.name = "에꿍스";
+        equus.gasoline = true;
+
+        System.out.print(equus.name + " : ");
+        equus.run();
     }
 }
