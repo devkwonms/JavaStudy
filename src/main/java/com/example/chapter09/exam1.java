@@ -4,6 +4,11 @@ class Car {
     String name;
     boolean gasoline;
 
+    Car(String aName, boolean aGasoline) {
+        name = aName;
+        gasoline = aGasoline;
+    }
+
     void run() {
         if (gasoline) {
             System.out.println("부릉부릉");
@@ -20,18 +25,14 @@ class Car {
 public class exam1 {
     public static void main(String[] args) {
 
-        Car korando = new Car();
-        korando.name = "코란도C";
-        korando.gasoline = false;
+        Car korando = new Car("코란도C", false);
 
-        System.out.print(korando.name + " : ");
         korando.run();
+        korando.stop();
 
-        Car equus = new Car();
-        equus.name = "에꿍스";
-        equus.gasoline = true;
+        Car equus = new Car("에꿍스", true);
 
-        System.out.print(equus.name + " : ");
         equus.run();
+        equus.stop();
     }
 }
