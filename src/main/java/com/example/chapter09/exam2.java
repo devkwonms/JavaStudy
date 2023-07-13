@@ -15,19 +15,13 @@ class Time {
     }
 
     // 인수가 3개인 생성자
-    Time(boolean am, int hour, int minute){
-        this.am = am;
-        this.hour = hour;
-        this.minute = minute;
-        this.second = 0;
+    Time(boolean am, int hour, int minute) {
+        this(am, hour, minute, 0);
     }
 
     // 인수가 2개인 생성자
-    Time(int hour24, int minute){
-        this.am = hour24 < 12;
-        this.hour = hour24 % 12;
-        this.minute = minute;
-        this.second = 0;
+    Time(int hour24, int minute) {
+        this(hour24 < 12, hour24 % 12, minute);
     }
 
     void whatTime() {
