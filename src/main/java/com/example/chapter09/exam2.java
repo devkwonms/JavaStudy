@@ -1,10 +1,13 @@
 package com.example.chapter09;
 
 class Time {
-    boolean am;
-    int hour;
-    int minute;
-    int second;
+    boolean am = true;
+    int hour = 12;
+    int minute = 0;
+    int second = 0;
+
+    // 디폴트 생성자
+    Time(){}
 
     // 인수가 4개인 생성자
     Time(boolean am, int hour, int minute, int second) {
@@ -41,5 +44,11 @@ public class exam2 {
 
         Time today = new Time(18, 30);  // 오후 6시 30분 0초
         today.whatTime();
+
+        Time midnight = new Time();
+        midnight.whatTime();
+
+        Time now3 = new Time(false, 3, 23, 0);
+        now3.whatTime();
     }
 }
