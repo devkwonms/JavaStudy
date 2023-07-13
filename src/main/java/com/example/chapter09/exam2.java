@@ -1,13 +1,26 @@
 package com.example.chapter09;
 
 class Time {
-    boolean am = true;
-    int hour = 12;
-    int minute = 0;
-    int second = 0;
+    boolean am;
+    int hour;
+    int minute;
+    int second;
+
+    // 초기화 블록
+    {
+        java.time.LocalTime now = java.time.LocalTime.now();
+        hour = now.getHour();
+        if (hour >= 12) {
+            hour -= 12;
+            am = false;
+        }
+        minute = now.getMinute();
+        second = now.getSecond();
+    }
 
     // 디폴트 생성자
-    Time(){}
+    Time() {
+    }
 
     // 인수가 4개인 생성자
     Time(boolean am, int hour, int minute, int second) {
