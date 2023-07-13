@@ -4,9 +4,13 @@ class Car {
     String name;
     boolean gasoline;
 
-    Car(String aName, boolean aGasoline) {
-        name = aName;
-        gasoline = aGasoline;
+    Car(String name, boolean gasoline) {
+        init(name, gasoline);
+    }
+
+    void init(String name, boolean gasoline) {
+        this.name = name;
+        this.gasoline = gasoline;
     }
 
     void run() {
@@ -30,9 +34,9 @@ public class exam1 {
         korando.run();
         korando.stop();
 
-        Car equus = new Car("에꿍스", true);
+        korando.init("제네시스", true);
 
-        equus.run();
-        equus.stop();
+        korando.run();
+        korando.stop();
     }
 }
