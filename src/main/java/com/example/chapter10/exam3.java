@@ -18,12 +18,12 @@ public class exam3 {
         System.out.println("생성전 : " + Car.carNum);
 
         Car korando = new Car("코란도C", false);
-        System.out.println(korando.name + " : " + korando.carNum);
+        System.out.println(korando.name + " : " + Car.carNum);
 
         Car equus = new Car("에꿍스", true);
-        System.out.println(equus.name + " : " + equus.carNum);
+        System.out.println(equus.name + " : " + Car.carNum);
 
         Car pride = new Car("프라이드", true);
-        System.out.println(pride.name + " : " + pride.carNum);
+        System.out.println(pride.name + " : " + Car.carNum);
     }
 }
