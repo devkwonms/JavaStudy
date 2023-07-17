@@ -4,6 +4,7 @@ class Notebook {
     final String CPU;
     int memory;
     int storage;
+    static final long GIGA = 1073741824L;
 
     Notebook(String CPU, int memory, int storage) {
         this.CPU = CPU;
@@ -19,8 +20,8 @@ class Notebook {
 
     void printSpec() {
         System.out.print("CPU = " + CPU);
-        System.out.print(" ,Memory = " + memory);
-        System.out.println(" ,Storage = " + storage);
+        System.out.print(" ,Memory = " + memory * GIGA + "바이트");
+        System.out.println(" ,Storage = " + storage * GIGA + "바이트");
     }
 }
 
@@ -30,8 +31,8 @@ public class exam6 {
         Notebook XNote = new Notebook("AMD 라이젠", 2, 320);
         Sens.printSpec();
         XNote.printSpec();
-        Sens.upgrade(8, 750);
-        Sens.printSpec();
+//        Sens.upgrade(8, 750);
+//        Sens.printSpec();
 
     }
 }
