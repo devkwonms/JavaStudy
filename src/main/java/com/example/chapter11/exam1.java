@@ -19,7 +19,7 @@ class Student extends Human {
     String major;
 
     Student(int age, String name, int stnum, String major) {
-        super(age, name);
+        super(age, name);   // 부모의 생성자에게 초기화 위임
         this.stnum = stnum;
         this.major = major;
     }
