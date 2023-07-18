@@ -29,14 +29,32 @@ class Student extends Human {
     }
 }
 
+class Graduate extends Student {
+
+    String thesis;
+
+    Graduate(int age, String name, int stnum, String major, String thesis) {
+        super(age, name, stnum, major);
+        this.thesis = thesis;
+    }
+
+    void research() {
+        System.out.println("뭘 연구해야 떼돈을 벌까?");
+    }
+}
+
 public class exam1 {
     public static void main(String[] args) {
-        Human kwon = new Human(29, "권민서");
-        kwon.intro();
+//        Human kwon = new Human(29, "권민서");
+//        kwon.intro();
+//
+//        Student lee = new Student(29, "이우림", 950403, "컴공");
+//        lee.intro();
+//        lee.study();
 
-        Student lee = new Student(29, "이우림", 950403, "컴공");
-        lee.intro();
-        lee.study();
-
+        Graduate park = new Graduate(35, "박대희", 95001122, "전산", "웹 보안에 대한 연구");
+        park.intro();
+        park.study();
+        park.research();
     }
 }
