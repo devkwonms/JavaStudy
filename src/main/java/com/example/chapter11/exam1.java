@@ -41,6 +41,34 @@ class Student extends Human {
     }
 }
 
+class Soldier extends Human {
+    int milnum;
+
+    Soldier(int age, String name, int milnum) {
+        super(age, name);
+        this.milnum = milnum;
+    }
+
+    void fight() {
+        System.out.println("따콩 따콩. 앞으로 전진!!");
+    }
+}
+
+class Thief extends Human {
+    String item;
+    int star;
+
+    Thief(int age, String name, String item, int star) {
+        super(age, name);
+        this.item = item;
+        this.star = star;
+    }
+
+    void steal() {
+        System.out.println("살금살금~~ 후다닥~~");
+    }
+}
+
 class Graduate extends Student {
 
     String thesis;
@@ -75,5 +103,13 @@ public class exam1 {
         Student bae = new Student(1989.10f, "배지영", 1125034, "간호");
         bae.intro();
 
+        Student choi = new Student(35, "최현석", 150629, "주자학");
+        choi.study();
+
+        Soldier kang = new Soldier(45, "강감찬", 12345);
+        kang.fight();
+
+        Thief hong = new Thief(15, "홍길동", "부잣집", 2);
+        hong.steal();
     }
 }
