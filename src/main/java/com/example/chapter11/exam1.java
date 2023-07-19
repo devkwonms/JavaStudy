@@ -1,8 +1,27 @@
 package com.example.chapter11;
 
+class Notebook {
+    final String CPU;
+    int memory;
+    int storage;
+
+    Notebook(String CPU, int memory, int storage) {
+        this.CPU = CPU;
+        this.memory = memory;
+        this.storage = storage;
+    }
+
+    void printSpec() {
+        System.out.print("CPU = " + CPU);
+        System.out.print(" ,Memory = " + memory);
+        System.out.println(" ,Storage = " + storage);
+    }
+}
+
 class Human {
     int age;
     String name;
+    Notebook book = new Notebook("",0,0);
 
     Human(int age, String name) {
         this.age = age;
@@ -15,8 +34,16 @@ class Human {
         this.age = now.getYear() - (int) birth + 1;
     }
 
+    Human(int age, String name, String CPU, int memory, int storage) {
+        book = new Notebook(CPU, memory, storage);
+        this.age = age;
+        this.name = name;
+    }
+
     void intro() {
         System.out.println("안녕," + age + "살 " + name + "입니다.");
+        System.out.print("나의 노트북 : ");
+        book.printSpec();
     }
 }
 
@@ -35,6 +62,7 @@ class Student extends Human {
         this.stnum = stnum;
         this.major = major;
     }
+
     @Override
     void intro() {
         super.intro();      //  부모의 overriding한 메서드를 직접 호출하고 싶을 때 super.method
@@ -117,5 +145,8 @@ public class exam1 {
 
         Thief hong = new Thief(15, "홍길동", "부잣집", 2);
         hong.steal();
+
+        Human song = new Human(29, "송지훈", "i7 Core", 8, 2000);
+        song.intro();
     }
 }
