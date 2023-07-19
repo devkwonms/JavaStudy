@@ -35,6 +35,10 @@ class Student extends Human {
         this.stnum = stnum;
         this.major = major;
     }
+    @Override
+    void intro() {
+        System.out.println(major + "학과" + stnum + "학번" + name + "입니다.");
+    }
 
     void study() {
         System.out.println("공부를 합니다.");
@@ -105,6 +109,7 @@ public class exam1 {
 
         Student choi = new Student(35, "최현석", 150629, "주자학");
         choi.study();
+        choi.intro();
 
         Soldier kang = new Soldier(45, "강감찬", 12345);
         kang.fight();
