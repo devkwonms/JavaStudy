@@ -37,6 +37,7 @@ class Student extends Human {
     }
     @Override
     void intro() {
+        super.intro();      //  부모의 overriding한 메서드를 직접 호출하고 싶을 때 super.method
         System.out.println(major + "학과" + stnum + "학번" + name + "입니다.");
     }
 
