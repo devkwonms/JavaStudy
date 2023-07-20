@@ -148,5 +148,15 @@ public class exam1 {
 
         Human song = new Human(29, "송지훈", "i7 Core", 8, 2000);
         song.intro();
+
+        Human baek = new Human(29, "백상형");
+        Student cho = new Student(42, "조승우", 9312345, "경영");
+
+        introHuman(baek);
+        introHuman(cho);
+
+    }
+    static void introHuman(Human who){
+        who.intro();
     }
 }
