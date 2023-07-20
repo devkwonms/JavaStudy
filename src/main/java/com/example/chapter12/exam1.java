@@ -34,16 +34,24 @@ public class exam1 {
 //        Dove dove = new Animal();
 //        dove.fly();
 
-        Animal animal = new Animal();
-        Dog dog = new Dog();
-
-        // upCasting
-        Animal up = (Animal) dog;
-        up.move();
+//        Animal animal = new Animal();
+//        Dog dog = new Dog();
+//
+//        // upCasting
+//        Animal up = (Animal) dog;
+//        up.move();
 
 //        // downCasting
 //        Dog down = (Dog)animal;
 //        down.move();
 //        down.bark();
+        Dog happy = new Dog();
+        testAnimal(happy);
+    }
+
+    static void testAnimal(Animal animal) {
+        Dog mydog = (Dog) animal;
+        mydog.move();
+        mydog.bark();
     }
 }
