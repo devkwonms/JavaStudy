@@ -47,11 +47,21 @@ public class exam1 {
 //        down.bark();
         Dog happy = new Dog();
         testAnimal(happy);
+
+        Dove donald = new Dove();
+        testAnimal(donald);
     }
 
     static void testAnimal(Animal animal) {
-        Dog mydog = (Dog) animal;
-        mydog.move();
-        mydog.bark();
+        animal.move();
+        if (animal instanceof Dog) {
+            Dog mydog = (Dog) animal;
+            mydog.bark();
+        }
+        if (animal instanceof Dove) {
+            Dove mydove = (Dove) animal;
+            mydove.fly();
+        }
+
     }
 }
