@@ -1,6 +1,16 @@
 package com.example.chapter13;
 
-class Marine {
+class Unit {
+    void move() {
+        System.out.println("이동");
+    }
+
+    void attack() {
+        System.out.println("공격");
+    }
+}
+
+class Marine extends Unit {
 
     void move() {
         System.out.println("아장아장");
@@ -15,7 +25,7 @@ class Marine {
     }
 }
 
-class Zealot {
+class Zealot extends Unit {
     void move() {
         System.out.println("뒤뚱뒤뚱");
     }
@@ -25,7 +35,7 @@ class Zealot {
     }
 }
 
-class Mutal {
+class Mutal extends Unit {
     void move() {
         System.out.println("퍼득 퍼득");
     }
@@ -37,13 +47,22 @@ class Mutal {
 
 public class exam1 {
     public static void main(String[] args) {
-        Marine marine = new Marine();
-        marine.move();
-        marine.attack();
-
-        Zealot zealot = new Zealot();
-        zealot.move();
-        zealot.attack();
+//        Marine marine = new Marine();
+//        marine.move();
+//        marine.attack();
+//
+//        Zealot zealot = new Zealot();
+//        zealot.move();
+//        zealot.attack();
+        Unit[] arUnit = {
+                new Marine(),
+                new Zealot(),
+                new Mutal(),
+        };
+        for (Unit u : arUnit) {
+            u.move();
+            u.attack();
+        }
 
     }
 }
