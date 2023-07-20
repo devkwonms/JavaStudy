@@ -124,6 +124,10 @@ class Graduate extends Student {
     void research() {
         System.out.println("뭘 연구해야 떼돈을 벌까?");
     }
+
+    void intro() {
+        System.out.println(thesis + " 논문을 쓰고 있는 대학원생입니다.");
+    }
 }
 
 public class exam1 {
@@ -164,11 +168,13 @@ public class exam1 {
 //
 //        introHuman(baek);
 //        introHuman(cho);
+
         Human[] arHuman = {
                 new Human(29, "김상형"),
                 new Student(42, "이승우", 9312345, "경영"),
                 new Soldier(45, "강감찬", 12345),
                 new Thief(15, "홍길동", "부잣집", 2),
+                new Graduate(35, "박대희", 95001122, "전산", "웹 보안에 대한 연구")
         };
 
         dumpGroup(arHuman);
