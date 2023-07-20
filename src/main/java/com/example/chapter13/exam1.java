@@ -1,13 +1,9 @@
 package com.example.chapter13;
 
-class Unit {
-    void move() {
-        System.out.println("이동");
-    }
+abstract class Unit {
+    abstract void move();
 
-    void attack() {
-        System.out.println("공격");
-    }
+    abstract void attack();
 }
 
 class Marine extends Unit {
