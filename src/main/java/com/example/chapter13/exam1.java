@@ -1,9 +1,9 @@
 package com.example.chapter13;
 
 interface Unit {
-     void move();
+    void move();
 
-     void attack();
+    void attack();
 }
 
 class Marine implements Unit {
@@ -41,6 +41,16 @@ class Mutal implements Unit {
     }
 }
 
+class SuperMan implements Unit {
+    public void move() {
+        System.out.println("슈우우웅~~~");
+    }
+
+    public void attack() {
+        System.out.println("빠직빠직");
+    }
+}
+
 public class exam1 {
     public static void main(String[] args) {
 //        Marine marine = new Marine();
@@ -54,6 +64,7 @@ public class exam1 {
                 new Marine(),
                 new Zealot(),
                 new Mutal(),
+                new SuperMan(),
         };
         for (Unit u : arUnit) {
             u.move();
