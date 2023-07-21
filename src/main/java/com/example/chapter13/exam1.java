@@ -5,7 +5,40 @@ interface Unit {
 
     void attack();
 }
+interface Hideable extends Unit {
+    void hide();
+}
+interface Healing extends Unit {
+    void heal();
+}
 
+class DarkTempler implements Hideable {
+    public void move() {
+        System.out.println("스믈 스믈");
+    }
+    public void attack() {
+        System.out.println("슉슉 낫질");
+    }
+
+    public void hide() {
+        System.out.println("안보이지롱");
+    }
+}
+
+class Medic implements Healing {
+
+    public void move() {
+        System.out.println("쫄래 쫄래");
+    }
+
+    public void attack() {
+        System.out.println("치지지직");
+    }
+
+    public void heal() {
+        System.out.println("마린씨 일루와");
+    }
+}
 class Marine implements Unit {
 
     public void move() {
@@ -64,17 +97,22 @@ public class exam1 {
 //        Zealot zealot = new Zealot();
 //        zealot.move();
 //        zealot.attack();
-        Unit[] arUnit = {
-                new Marine(),
-                new Zealot(),
-                new Mutal(),
-                new SuperMan(),
-                new Firebat(),
-        };
-        for (Unit u : arUnit) {
-            u.move();
-            u.attack();
-        }
+//        Unit[] arUnit = {
+//                new Marine(),
+//                new Zealot(),
+//                new Mutal(),
+//                new SuperMan(),
+//                new Firebat(),
+//        };
+//        for (Unit u : arUnit) {
+//            u.move();
+//            u.attack();
+//        }
+        DarkTempler dt = new DarkTempler();
+        dt.hide();
+
+        Medic medic = new Medic();
+        medic.heal();
 
     }
 }
