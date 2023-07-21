@@ -1,42 +1,42 @@
 package com.example.chapter13;
 
-abstract class Unit {
-    abstract void move();
+interface Unit {
+     void move();
 
-    abstract void attack();
+     void attack();
 }
 
-class Marine extends Unit {
+class Marine implements Unit {
 
-    void move() {
+    public void move() {
         System.out.println("아장아장");
     }
 
-    void attack() {
+    public void attack() {
         System.out.println("두두두두두");
     }
 
-    void bunker() {
+    public void bunker() {
         System.out.println("쏙~ 숨었지롱");
     }
 }
 
-class Zealot extends Unit {
-    void move() {
+class Zealot implements Unit {
+    public void move() {
         System.out.println("뒤뚱뒤뚱");
     }
 
-    void attack() {
+    public void attack() {
         System.out.println("우갸 우갸 챙챙");
     }
 }
 
-class Mutal extends Unit {
-    void move() {
+class Mutal implements Unit {
+    public void move() {
         System.out.println("퍼득 퍼득");
     }
 
-    void attack() {
+    public void attack() {
         System.out.println("삼지창 휙휙");
     }
 }
