@@ -50,7 +50,11 @@ class SuperMan implements Unit {
         System.out.println("빠직빠직");
     }
 }
-
+class Firebat extends Marine{
+    public void attack(){
+        System.out.println("화르르르~~");
+    }
+}
 public class exam1 {
     public static void main(String[] args) {
 //        Marine marine = new Marine();
@@ -65,6 +69,7 @@ public class exam1 {
                 new Zealot(),
                 new Mutal(),
                 new SuperMan(),
+                new Firebat(),
         };
         for (Unit u : arUnit) {
             u.move();
