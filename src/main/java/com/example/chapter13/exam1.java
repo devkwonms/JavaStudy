@@ -4,18 +4,26 @@ interface Unit {
     void move();
 
     void attack();
+
+    default void die() {
+        System.out.println("꽥꼬닥");
+    }
 }
+
 interface Hideable extends Unit {
     void hide();
 }
+
 interface Healing extends Unit {
     void heal();
 }
 
 class DarkTempler implements Hideable {
+
     public void move() {
         System.out.println("스믈 스믈");
     }
+
     public void attack() {
         System.out.println("슉슉 낫질");
     }
@@ -39,6 +47,7 @@ class Medic implements Healing {
         System.out.println("마린씨 일루와");
     }
 }
+
 class Marine implements Unit {
 
     public void move() {
@@ -55,6 +64,7 @@ class Marine implements Unit {
 }
 
 class Zealot implements Unit {
+
     public void move() {
         System.out.println("뒤뚱뒤뚱");
     }
@@ -62,9 +72,11 @@ class Zealot implements Unit {
     public void attack() {
         System.out.println("우갸 우갸 챙챙");
     }
+
 }
 
 class Mutal implements Unit {
+
     public void move() {
         System.out.println("퍼득 퍼득");
     }
@@ -75,6 +87,7 @@ class Mutal implements Unit {
 }
 
 class SuperMan implements Unit {
+
     public void move() {
         System.out.println("슈우우웅~~~");
     }
@@ -83,11 +96,14 @@ class SuperMan implements Unit {
         System.out.println("빠직빠직");
     }
 }
-class Firebat extends Marine{
-    public void attack(){
+
+class Firebat extends Marine {
+
+    public void attack() {
         System.out.println("화르르르~~");
     }
 }
+
 public class exam1 {
     public static void main(String[] args) {
 //        Marine marine = new Marine();
@@ -113,6 +129,10 @@ public class exam1 {
 
         Medic medic = new Medic();
         medic.heal();
+
+        new Marine().die();
+
+        new Zealot().die();
 
     }
 }
