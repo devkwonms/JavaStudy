@@ -1,35 +1,27 @@
 package com.example.chapter13;
 
-class HandPhone {
-    void call() {
+interface HandPhone {
+    default void call() {
         System.out.println("전화를 건다.");
     }
 
-    void receive() {
+    default void receive() {
         System.out.println("전화를 받는다.");
     }
 }
 
 interface Camera {
-    void takePicture();
+    default void takePicture(){ System.out.println("찰칵. 사진을 찍는다."); };
 }
 
 interface Mp3 {
     void play();
 }
 
-class HandPhoneCamera extends HandPhone implements Camera {
-    public void takePicture() {
-        System.out.println("찰칵. 사진을 찍는다.");
-    }
+class HandPhoneCamera implements HandPhone,Camera {
 }
 
-class SmartPhone extends HandPhone implements Camera, Mp3 {
-
-    @Override
-    public void takePicture() {
-        System.out.println("찰칵. 사진을 찍는다");
-    }
+class SmartPhone implements HandPhone, Camera, Mp3 {
 
     @Override
     public void play() {
