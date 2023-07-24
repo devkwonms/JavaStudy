@@ -8,6 +8,11 @@ interface Unit {
     default void die() {
         System.out.println("꽥꼬닥");
     }
+
+    static void moveAttack(Unit u) {
+        u.move();
+        u.attack();
+    }
 }
 
 interface Hideable extends Unit {
@@ -133,6 +138,10 @@ public class exam1 {
         new Marine().die();
 
         new Zealot().die();
+
+        // 부모클래스(인터페이스) 의 정적메서드를 통한 자식 메서드 호출하기
+        Unit m = new Marine();
+        Unit.moveAttack(m);
 
     }
 }
