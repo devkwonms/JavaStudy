@@ -9,7 +9,7 @@ class Human {
         this.name = name;
     }
 
-    public String toString(){
+    public String toString() {
         return age + "세의 " + name;
     }
 }
@@ -19,10 +19,11 @@ public class exam1 {
         int i = 1234;
         System.out.println(i);
 
-        Human kim = new Human(29, "권민서");
+        Human kim = new Human(29, "김상형");
         System.out.println(kim);
 
         String str = "범인 : " + kim;
         System.out.println(str);
+
     }
 }
