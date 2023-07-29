@@ -8,6 +8,10 @@ class Human {
         this.age = age;
         this.name = name;
     }
+
+    public String toString(){
+        return age + "세의 " + name;
+    }
 }
 
 public class exam1 {
@@ -17,5 +21,8 @@ public class exam1 {
 
         Human kim = new Human(29, "권민서");
         System.out.println(kim);
+
+        String str = "범인 : " + kim;
+        System.out.println(str);
     }
 }
