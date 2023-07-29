@@ -25,5 +25,16 @@ public class exam1 {
         String str = "범인 : " + kim;
         System.out.println(str);
 
+        Human kwon = new Human(29, "권민서");
+        Human lee = new Human(29, "이우림");
+
+        Human kwonCopy = kwon;
+        Human kwon2 = new Human(29, "권민서");
+
+        System.out.println("kwon == lee : " + (kwon == lee ? "같다" : "다르다"));
+        System.out.println("kwon == kwonCopy : " + (kwon == kwonCopy ? "같다" : "다르다"));
+        System.out.println("kwon == kwon2 : " + (kwon == kwon2 ? "같다" : "다르다"));
+
+
     }
 }
