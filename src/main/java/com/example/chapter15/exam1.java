@@ -2,7 +2,7 @@ package com.example.chapter15;
 
 import java.lang.reflect.*;
 
-class Human {
+class Human implements Cloneable {
     int age;
     String name;
 
@@ -12,7 +12,11 @@ class Human {
     }
 
     public Object clone() {
-        return new Human(age, name);
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
     }
 
     void intro() {
