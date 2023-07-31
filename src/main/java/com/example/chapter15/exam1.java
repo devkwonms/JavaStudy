@@ -1,4 +1,5 @@
 package com.example.chapter15;
+
 import java.lang.reflect.*;
 
 class Human {
@@ -8,6 +9,10 @@ class Human {
     Human(int age, String name) {
         this.age = age;
         this.name = name;
+    }
+
+    public Object clone() {
+        return new Human(age, name);
     }
 
     void intro() {
@@ -35,6 +40,11 @@ public class exam1 {
 
         Human kim = new Human(29, "김상형");
 //        System.out.println(kim);
+        Human kim2 = (Human) kim.clone();
+        kim2.name = "이순신";
+
+        System.out.println("kim.name = " + kim.name);
+        System.out.println("kim2.name = " + kim2.name);
 
         Class cls = kim.getClass();
         System.out.println("클래스 이름 = " + cls.getName());
@@ -42,7 +52,7 @@ public class exam1 {
 
         System.out.print("필드 : ");
         Field[] fields = cls.getDeclaredFields();
-        for (Field F : fields){
+        for (Field F : fields) {
             System.out.print(F.getName() + " ");
         }
 
@@ -50,7 +60,7 @@ public class exam1 {
 
         System.out.print("메서드 : ");
         Method[] methods = cls.getDeclaredMethods();
-        for (Method M : methods){
+        for (Method M : methods) {
             System.out.print(M.getName() + " ");
         }
 
