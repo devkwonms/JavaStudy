@@ -5,6 +5,7 @@ import java.lang.reflect.*;
 class Human implements Cloneable {
     int age;
     String name;
+    int[] score = new int[]{1, 2, 3};
 
     Human(int age, String name) {
         this.age = age;
@@ -49,6 +50,11 @@ public class exam1 {
 
         System.out.println("kim.name = " + kim.name);
         System.out.println("kim2.name = " + kim2.name);
+
+        kim2.score[0] = 999;
+
+        System.out.println("kim.score[0] = " + kim.score[0]);
+        System.out.println("kim2.score[0] = " + kim2.score[0]);
 
         Class cls = kim.getClass();
         System.out.println("클래스 이름 = " + cls.getName());
