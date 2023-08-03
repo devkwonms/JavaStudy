@@ -14,7 +14,9 @@ class Human implements Cloneable {
 
     public Object clone() {
         try {
-            return super.clone();
+            Human other = (Human)super.clone();
+            other.score = this.score.clone();
+            return other;
         } catch (CloneNotSupportedException e) {
             return null;
         }
