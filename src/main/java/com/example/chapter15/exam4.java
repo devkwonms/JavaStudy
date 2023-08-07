@@ -11,6 +11,7 @@ class Network {
 
     protected void finalize() throws Throwable {
         super.finalize();
+//        System.out.println("finalize method 실행");
         disconnect();
     }
 }
@@ -20,6 +21,7 @@ public class exam4 {
 
         communication();
         System.gc();    //  쓰레기 수집 강제지시 => 객체 즉시 제거
+//        System.out.println("gc 강제 지시");
         System.runFinalization();
     }
 
