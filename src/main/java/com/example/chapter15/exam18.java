@@ -7,7 +7,8 @@ public class exam18 {
         int[] ar = {1, 2, 3, 4, 5};
         int[] ar2 = new int[5];
 
-        System.arraycopy(ar, 0, ar2, 0, ar.length);
+//        System.arraycopy(ar, 0, ar2, 0, ar.length);
+        System.arraycopy(ar, 1, ar2, 2, 2);
 
         for (int a : ar2) {
             System.out.print(a + " ");
