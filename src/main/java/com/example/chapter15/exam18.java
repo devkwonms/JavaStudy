@@ -1,5 +1,7 @@
 package com.example.chapter15;
 
+import java.util.Arrays;
+
 public class exam18 {
     public static void main(String[] args) {
         int[] ar = {1, 2, 3, 4, 5};
@@ -10,5 +12,8 @@ public class exam18 {
         for (int a : ar2) {
             System.out.print(a + " ");
         }
+        System.out.println(ar.equals(ar2));
+        System.out.println(ar == ar2);
+        System.out.println(Arrays.equals(ar,ar2));
     }
 }
