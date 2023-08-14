@@ -12,5 +12,6 @@ public class exam1 {
         String str3 = new String(ar);
         System.out.println("str3 = " + str3);
 
+        System.out.println("대한민국".length());
     }
 }
