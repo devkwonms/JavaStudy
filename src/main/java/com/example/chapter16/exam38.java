@@ -1,6 +1,11 @@
 package com.example.chapter16;
 
-record Point(int x, int y) {}
+record Point(int x, int y) {
+    Point {
+        if(x <0) x = 0;
+        if(y <0) y = 0;
+    }
+}
 
 //class Point {
 //    // 좌표를 저장할 변수

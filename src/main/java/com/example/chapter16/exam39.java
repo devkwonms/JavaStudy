@@ -5,6 +5,9 @@ public class exam39 {
         Point pt = new Point(100, 150);
         Point pt2 = GetMidPoint(pt);
         System.out.println(pt2);
+
+        Point pt3 = new Point(-123, 456);
+        System.out.println(pt3);
     }
 
     public static Point GetMidPoint(Point pt) {
