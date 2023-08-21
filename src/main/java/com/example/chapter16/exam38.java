@@ -1,41 +1,43 @@
 package com.example.chapter16;
 
-class Point {
-    // 좌표를 저장할 변수
-    private final int x;
-    private final int y;
+record Point(int x, int y) {}
 
-    // 기본 생성자
-    Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    // 변수를 읽어줄 액세서
-    int x() {
-        return x;
-    }
-
-    int y() {
-        return y;
-    }
-
-    // 상등 비교
-    public boolean equals(Object other) {
-        if (other instanceof Point == false) return false;
-        return ((Point) other).x == x && ((Point) other).y == y;
-    }
-
-    // 해시 코드
-    public int hashCode() {
-        return y * 10000 + x;
-    }
-
-    // 문자열화
-    public String toString() {
-        return "Point(" + x + "," + y + ")";
-    }
-}
+//class Point {
+//    // 좌표를 저장할 변수
+//    private final int x;
+//    private final int y;
+//
+//    // 기본 생성자
+//    Point(int x, int y) {
+//        this.x = x;
+//        this.y = y;
+//    }
+//
+//    // 변수를 읽어줄 액세서
+//    int x() {
+//        return x;
+//    }
+//
+//    int y() {
+//        return y;
+//    }
+//
+//    // 상등 비교
+//    public boolean equals(Object other) {
+//        if (other instanceof Point == false) return false;
+//        return ((Point) other).x == x && ((Point) other).y == y;
+//    }
+//
+//    // 해시 코드
+//    public int hashCode() {
+//        return y * 10000 + x;
+//    }
+//
+//    // 문자열화
+//    public String toString() {
+//        return "Point(" + x + "," + y + ")";
+//    }
+//}
 
 public class exam38 {
     public static void main(String[] args) {
