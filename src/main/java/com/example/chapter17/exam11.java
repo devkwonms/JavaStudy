@@ -23,5 +23,13 @@ public class exam11 {
         for (String name : arName) {
             System.out.print(name + " ");
         }
+
+        System.out.println();
+
+        Collections.shuffle(arName);
+
+        for (String name : arName) {
+            System.out.print(name + " ");
+        }
     }
 }
