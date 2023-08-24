@@ -14,5 +14,12 @@ public class exam10 {
         while (it.hasNext()) {
             System.out.println(it.next());
         }
+
+        System.out.println();
+
+        ListIterator<String> it2 = arName.listIterator(arName.size());
+        while (it2.hasPrevious()) {
+            System.out.println(it2.previous());
+        }
     }
 }
