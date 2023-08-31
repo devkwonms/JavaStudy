@@ -27,5 +27,9 @@ public class exam5 {
         System.out.println(bdv);
 
         System.out.println(bi.getClass() == bd.getClass());
+
+        Box rb = new Box(1234);
+        int rbv = (int)rb.get();
+        System.out.println(rbv);
     }
 }
