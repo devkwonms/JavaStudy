@@ -25,5 +25,7 @@ public class exam5 {
         Box<Double> bd = new Box<>(56.78);
         double bdv = bd.get();
         System.out.println(bdv);
+
+        System.out.println(bi.getClass() == bd.getClass());
     }
 }
