@@ -11,10 +11,8 @@ public class exam5 {
             c = a / b;
             System.out.println("c = " + c);
             ar[5] = 100;
-        } catch (ArithmeticException e) {
-            System.out.println("0으로 나누기 예외 발생");
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("첨자가 배열 범위를 넘어섰습니다.");
+        } catch (RuntimeException e) {
+            System.out.println("실행 중 예외 발생");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
