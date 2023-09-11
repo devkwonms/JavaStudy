@@ -6,18 +6,18 @@ public class exam6 {
     }
 
     static void method() {
-        submethod();
+        try {
+            submethod();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     static void submethod() {
         int i;
         int a = 3, b = 0;
-        try {
-            i = a / b;
-            System.out.println(i);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        }
+        i = a / b;
+        System.out.println(i);
     }
 }
