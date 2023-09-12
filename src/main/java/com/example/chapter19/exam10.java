@@ -5,9 +5,10 @@ public class exam10 {
         System.out.println("접속");
         try {
             System.out.println("전송");
-            System.out.println("해제");
         } catch (Exception e) {
             System.out.println("예외 처리");
+        }
+        finally {
             System.out.println("해제");
         }
     }
