@@ -1,6 +1,6 @@
 package com.example.chapter19;
 
-class NetAccess {
+class NetAccess implements AutoCloseable {
     public void open() {
         System.out.println("접속");
     }
@@ -16,12 +16,9 @@ class NetAccess {
 
 public class exam11 {
     public static void main(String[] args) {
-        NetAccess na = new NetAccess();
-        try {
+        try (NetAccess na = new NetAccess()) {
             na.open();
             na.send();
-        } finally {
-            na.close();
         }
     }
 }
