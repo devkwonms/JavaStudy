@@ -17,10 +17,8 @@ public class exam3 {
     }
 }
 
-class PrintRunnable implements Runnable {
-
-    @Override
-    public void run() {
+class PrintClass {
+    public void printChar() {
         for (int num = 0; num < 30; num++) {
             System.out.print("X");
             try {
@@ -29,5 +27,13 @@ class PrintRunnable implements Runnable {
                 ;
             }
         }
+    }
+}
+
+class PrintRunnable extends PrintClass implements Runnable {
+
+    @Override
+    public void run() {
+        printChar();
     }
 }
