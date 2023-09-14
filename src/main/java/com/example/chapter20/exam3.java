@@ -2,8 +2,7 @@ package com.example.chapter20;
 
 public class exam3 {
     public static void main(String[] args) {
-        PrintRunnable print = new PrintRunnable();
-        Thread worker = new Thread(print);
+        Thread worker = new Thread(mRunnable);
         worker.start();
 
         for (int num = 0; num < 30; num++) {
@@ -15,25 +14,18 @@ public class exam3 {
             }
         }
     }
-}
 
-class PrintClass {
-    public void printChar() {
-        for (int num = 0; num < 30; num++) {
-            System.out.print("X");
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                ;
+    static Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
+            for (int num = 0; num < 30; num++) {
+                System.out.print("X");
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    ;
+                }
             }
         }
-    }
-}
-
-class PrintRunnable extends PrintClass implements Runnable {
-
-    @Override
-    public void run() {
-        printChar();
-    }
+    };
 }
