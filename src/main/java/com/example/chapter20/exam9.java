@@ -31,13 +31,15 @@ class DownLoad extends Thread {
     }
 
     public void run() {
-        for (int off = 0; off < mem.size; off++) {
-            mem.buffer[off] = off;
-            mem.progress = off + 1;
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                ;
+        for (int off = 0; off < mem.size; off += 2) {
+            for (int chunk = 0; chunk < 2; chunk++) {
+                mem.buffer[off + chunk] = off + chunk;
+                mem.progress = off + chunk + 1;
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    ;
+                }
             }
         }
     }
