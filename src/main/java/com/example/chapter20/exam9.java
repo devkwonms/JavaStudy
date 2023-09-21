@@ -21,6 +21,29 @@ class Memory {
         buffer = new int[asize];
         progress = 0;
     }
+
+    void DownChunk(int off) {
+        synchronized (this) {
+            for (int chunk = 0; chunk < 2; chunk++) {
+                buffer[off + chunk] = off + chunk;
+                progress = off + chunk + 1;
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    ;
+                }
+            }
+        }
+    }
+
+    void PlayDowned() {
+        synchronized (this) {
+            for (int off = 0; off < progress; off++) {
+                System.out.print(buffer[off] + " ");
+            }
+            System.out.println();
+        }
+    }
 }
 
 class DownLoad extends Thread {
@@ -32,17 +55,7 @@ class DownLoad extends Thread {
 
     public void run() {
         for (int off = 0; off < mem.size; off += 2) {
-            synchronized (mem) {
-                for (int chunk = 0; chunk < 2; chunk++) {
-                    mem.buffer[off + chunk] = off + chunk;
-                    mem.progress = off + chunk + 1;
-                    try {
-                        Thread.sleep(200);
-                    } catch (InterruptedException e) {
-                        ;
-                    }
-                }
-            }
+            mem.DownChunk(off);
         }
     }
 }
@@ -56,12 +69,7 @@ class Play extends Thread {
 
     public void run() {
         for (; ; ) {
-            synchronized (mem) {
-                for (int off = 0; off < mem.progress; off++) {
-                    System.out.print(mem.buffer[off] + " ");
-                }
-                System.out.println();
-            }
+            mem.PlayDowned();
             if (mem.progress == mem.size) break;
             try {
                 Thread.sleep(500);
