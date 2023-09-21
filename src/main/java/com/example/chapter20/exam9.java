@@ -22,27 +22,23 @@ class Memory {
         progress = 0;
     }
 
-    void DownChunk(int off) {
-        synchronized (this) {
-            for (int chunk = 0; chunk < 2; chunk++) {
-                buffer[off + chunk] = off + chunk;
-                progress = off + chunk + 1;
-                try {
-                    Thread.sleep(200);
-                } catch (InterruptedException e) {
-                    ;
-                }
+    synchronized void DownChunk(int off) {
+        for (int chunk = 0; chunk < 2; chunk++) {
+            buffer[off + chunk] = off + chunk;
+            progress = off + chunk + 1;
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                ;
             }
         }
     }
 
-    void PlayDowned() {
-        synchronized (this) {
-            for (int off = 0; off < progress; off++) {
-                System.out.print(buffer[off] + " ");
-            }
-            System.out.println();
+    synchronized void PlayDowned() {
+        for (int off = 0; off < progress; off++) {
+            System.out.print(buffer[off] + " ");
         }
+        System.out.println();
     }
 }
 
