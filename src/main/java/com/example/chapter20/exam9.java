@@ -32,13 +32,15 @@ class DownLoad extends Thread {
 
     public void run() {
         for (int off = 0; off < mem.size; off += 2) {
-            for (int chunk = 0; chunk < 2; chunk++) {
-                mem.buffer[off + chunk] = off + chunk;
-                mem.progress = off + chunk + 1;
-                try {
-                    Thread.sleep(200);
-                } catch (InterruptedException e) {
-                    ;
+            synchronized (mem) {
+                for (int chunk = 0; chunk < 2; chunk++) {
+                    mem.buffer[off + chunk] = off + chunk;
+                    mem.progress = off + chunk + 1;
+                    try {
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        ;
+                    }
                 }
             }
         }
@@ -54,10 +56,12 @@ class Play extends Thread {
 
     public void run() {
         for (; ; ) {
-            for (int off = 0; off < mem.progress; off++) {
-                System.out.print(mem.buffer[off] + " ");
+            synchronized (mem) {
+                for (int off = 0; off < mem.progress; off++) {
+                    System.out.print(mem.buffer[off] + " ");
+                }
+                System.out.println();
             }
-            System.out.println();
             if (mem.progress == mem.size) break;
             try {
                 Thread.sleep(500);
