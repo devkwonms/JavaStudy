@@ -50,8 +50,17 @@ class DownLoad extends Thread {
     }
 
     public void run() {
-        for (int off = 0; off < mem.size; off += 2) {
-            mem.DownChunk(off);
+        for (int off = 0; off < mem.size; off++) {
+            mem.buffer[off] = off;
+            mem.progress = off + 1;
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                ;
+            }
+        }
+        synchronized (mem) {
+            mem.notify();
         }
     }
 }
@@ -64,14 +73,16 @@ class Play extends Thread {
     }
 
     public void run() {
-        for (; ; ) {
-            mem.PlayDowned();
-            if (mem.progress == mem.size) break;
+        synchronized (mem) {
             try {
-                Thread.sleep(500);
+                mem.wait();     // 완성될 때까지 대기
             } catch (InterruptedException e) {
                 ;
             }
         }
+        for (int off = 0; off < mem.progress; off++) {
+            System.out.print(mem.buffer[off] + " ");
+        }
+        System.out.println();
     }
 }
