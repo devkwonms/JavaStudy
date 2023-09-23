@@ -8,6 +8,7 @@ public class exam9 {
 
         down.start();
         play.start();
+        System.out.println("다운로드가 완료되었습니다. 전송을 시작합니다");
     }
 }
 
