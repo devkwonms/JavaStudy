@@ -1,14 +1,13 @@
 package com.example.chapter21;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.*;
 
 public class exam8 {
     public static void main(String[] args) throws Exception {
         long start = System.currentTimeMillis();
         System.out.println("복사 시작");
-        FileInputStream src = new FileInputStream("src.dat");
-        FileOutputStream dest = new FileOutputStream("dest.dat");
+        BufferedInputStream src = new BufferedInputStream(new FileInputStream("src.dat"));
+        BufferedOutputStream dest = new BufferedOutputStream(new FileOutputStream("dest.dat"));
         int data;
         for (; ; ) {
             data = src.read();
