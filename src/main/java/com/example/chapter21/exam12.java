@@ -4,18 +4,14 @@ import java.io.*;
 
 public class exam12 {
     public static void main(String[] args) {
-        int name;
-        System.out.println("이름을 입력한 후 Enter를 누르시오(끝낼 때는 Ctrl + Z).");
         InputStreamReader r = new InputStreamReader(System.in);
-        for (; ; ) {
-            try {
-                name = r.read();
-                if (name == -1) break;
-                System.out.print((char) name);
-            } catch (java.io.IOException e) {
-                System.out.println("input error");
-            }
+        BufferedReader b = new BufferedReader(r);
+        try {
+            String str = b.readLine();
+            System.out.println(str);
+            System.out.println("입력완료");
+        } catch (IOException e) {
+            System.out.println("input error");
         }
-        System.out.println("입력완료");
     }
 }
