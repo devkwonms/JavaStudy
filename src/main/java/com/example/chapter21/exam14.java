@@ -5,12 +5,14 @@ import java.io.*;
 class Car implements Serializable {
     String name;
     String color;
-    boolean gasoline;
+    transient boolean gasoline;
+    static int count = 0;
 
     Car(String name, String color, boolean gasoline) {
         this.name = name;
         this.color = color;
         this.gasoline = gasoline;
+        count++;
     }
 
     void outInfo() {
