@@ -9,10 +9,10 @@ public class exam16 {
             if (f.isFile()) {
                 System.out.println("파일입니다.");
                 System.out.println("파일경로 : " + f.getParent());
-                System.out.println("파일경로 : " + f.getName());
-                System.out.println("파일경로 : " + f.length());
-                System.out.println("파일경로 : " + f.isHidden());
-                System.out.println("파일경로 : " + f.isAbsolute());
+                System.out.println("파일이름 : " + f.getName());
+                System.out.println("파일크기 : " + f.length());
+                System.out.println("숨김 파일 : " + f.isHidden());
+                System.out.println("절대 경로 : " + f.isAbsolute());
             } else if (f.isDirectory()) {
                 System.out.println("디렉터리입니다.");
             }
